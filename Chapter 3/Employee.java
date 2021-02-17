@@ -30,6 +30,10 @@ public class Employee{
 	public double getSalary(){
 		return salary;
 	}
+	public void salaryIncreaseRate(double rate){
+		salary += (rate/100) * salary;
+	}
+	
 
 
 }

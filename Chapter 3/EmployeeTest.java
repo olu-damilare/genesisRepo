@@ -22,11 +22,11 @@ public class EmployeeTest{
 	secondEmployee.setSalary(500000.00);
 	System.out.println("The second employee's salary is " + secondEmployee.getSalary() + " dollars");
 
-	double firstEmployeeNewSalary = firstEmployee.getSalary() + (0.10 * firstEmployee.getSalary());
-	double secondEmployeeNewSalary = secondEmployee.getSalary() + (0.10 * secondEmployee.getSalary());
+	firstEmployee.salaryIncreaseRate(10.0);
+	secondEmployee.salaryIncreaseRate(10.0);
 	
-	System.out.println("After 10% increase, the first employee's new salary is " + firstEmployeeNewSalary + " dollars");
-	System.out.println("After 10% increase, the second employee's new salary is " + secondEmployeeNewSalary + " dollars");
+	System.out.println("After 10% increase, the first employee's new salary is " + firstEmployee.getSalary() + " dollars");
+	System.out.println("After 10% increase, the second employee's new salary is " + secondEmployee.getSalary() + " dollars");
 }
 
 }

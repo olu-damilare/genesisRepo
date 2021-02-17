@@ -23,8 +23,8 @@ public class HeartRatesTest{
 	System.out.println("the full name is " + patient.getFirstName() + " " + patient.getLastName());
 	System.out.println("the date of birth is " + ((String)patient.getDateOfBirth()));	
 	System.out.println("the age is " + patient.calculateAge());
-	System.out.println("the maximum heart rate is " + patient.getMHR());
-	System.out.println("the target heart rate is " + patient.getTargetHeartRate() + "%");
+	System.out.println("the maximum heart rate is " + patient.calculateMHR());
+	System.out.println("the target heart rate is " + patient.getTargetHeartRate() + " beats per minute");
 	}
 
 }

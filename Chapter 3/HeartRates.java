@@ -36,12 +36,14 @@ public class HeartRates{
 		return age;
 		
 	}
-	public int getMHR(){
+	public int calculateMHR(){
 		maximumHeartRate = 220 - age;
 		return maximumHeartRate; 
 	}
-	public double getTargetHeartRate(){
-		double targetHeartRate = 0.5 * ((double) maximumHeartRate);
+	public String getTargetHeartRate(){
+		double minimumTargetHeartRate = 0.5 * ((double) maximumHeartRate);
+		double maximumTargetHeartRate = 0.85 * ((double) maximumHeartRate);
+		String targetHeartRate = minimumTargetHeartRate + " - " +  maximumTargetHeartRate;
 		return targetHeartRate;
 	}
 
