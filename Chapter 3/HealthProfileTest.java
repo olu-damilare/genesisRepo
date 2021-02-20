@@ -1,7 +1,8 @@
 import java.util.Scanner;
 public class HealthProfileTest{
 	public static void main(String[] args){
-		HealthProfile patient = new HealthProfile("John", "Doe", "Male", 5, 27, 1988, 72.50, 200.00);
+		Date date = new Date(0, 0, 0);
+		HealthProfile patient = new HealthProfile("John", "Doe", "Male", 72.50, 200.00);
 
 		System.out.println("Enter your first name: ");
 		Scanner input = new Scanner(System.in);
@@ -14,14 +15,17 @@ public class HealthProfileTest{
 		
 		System.out.println("Enter your month of birth: ");
 		int patientMonthOfBirth = input.nextInt();
+		date.setMonth(patientMonthOfBirth);
 
 		System.out.println("Enter your day of birth: ");
 		int patientDayOfBirth = input.nextInt();
+		date.setDay(patientDayOfBirth);
 		
 		System.out.println("Enter your year of birth: ");
 		int patientYearOfBirth = input.nextInt();
+		date.setYear(patientYearOfBirth);
 			
-		patient.setDOB(patientMonthOfBirth, patientDayOfBirth, patientYearOfBirth);
+		System.out.println(date.displayDate());
 
 		System.out.println("Enter your height in inches: ");
 		double patientHeightInInches = input.nextDouble();
@@ -32,12 +36,12 @@ public class HealthProfileTest{
 		patient.setHeight(patientHeightInInches);
 
 		System.out.println("The patient's full name is " + patient.getFirstName() + " " + patient.getLastName());
-		System.out.println("The patient's date of birth is " + patient.getDateOfBirth());
-		System.out.println("The patient's age is " + patient.calculateAge());
+		System.out.println("The patient's date of birth is " + date.displayDate());
+		System.out.println("The patient's age is " + patient.calculateAge(patientYearOfBirth));
 		System.out.println("The patient's gender is " + patient.getGender());
 		System.out.println("The patient's height is " + patient.getHeight());
 		System.out.println("The patient's weight is " + patient.getWeight());
-		System.out.println("The patient's Maximum Heart Rate is " + patient.calculateMHR() + " beats per minute");
+		System.out.println("The patient's Maximum Heart Rate is " + patient.calculateMHR(date.getYear()) + " beats per minute");
 		System.out.println("The patient's Target Heart Rate is " + patient.calculateTargetHeartRate() + " beats per minute");
 		System.out.println();
 		System.out.printf("The patient's Body Mass Index is %.2f%n", patient.calculateBMI());

@@ -52,7 +52,7 @@ public class Date {
 		return day;
 	}
 	public void setYear(int year){
-		if(year <2022)
+		if(year >= 1900 && year <2022)
 			this.year = year;
 	}
 	public int getYear(){

@@ -2,22 +2,15 @@ public class HealthProfile{
 	private String firstName;
 	private String lastName;
 	private String gender;
-	private int month;
-	private int day;
-	private int year;
 	private double height;
 	private double weight;
 	private int maximumHeartRate;
 
-
-	public HealthProfile(String firstName,String lastName, String gender, 
-	int month, int day, int year, double height, double weight){
+        
+	public HealthProfile(String firstName,String lastName, String gender, double height, double weight){
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.gender = gender;
-		this.month = month;
-		this.day = day;
-		this.year = year;
 		this.height = height;
 		this.weight = weight;
 	}
@@ -39,25 +32,7 @@ public class HealthProfile{
 	public String getGender(){
 		return gender;
 	}
-	public boolean checkDaysInFebruary(int month, int day, int year){
-		boolean isLeapYear = year % 4 == 0 && month == 2 && day <= 29;
-		return isLeapYear;
-		
-	}
-	public void setDOB(int month, int day, int year){
-		/* if(month >= 1 && month <=12 && day >= 1 && day <= 31 && year >= 1900 && year <= 2021)
-		{	if(month == 2 && year % 4 != 0){
-				day <= 29}
-				*/
-			 this.year = year;
-			this.month = month;
-			this.day = day;}
-	}
-	public String getDateOfBirth(){
-		String DOB = month + "/" + day + "/" + year;
-		return  DOB;
-	}
-	public int calculateAge(){
+	public int calculateAge(int year){
 		int age = 2021 - year;
 		return age;
 	}
@@ -75,7 +50,7 @@ public class HealthProfile{
 	public double getWeight(){
 		return weight;
 	}
-	public int calculateMHR(){
+	public int calculateMHR(int year){
 		int age = 2021 - year;
 		maximumHeartRate = 220 - age;
 		return maximumHeartRate; 
