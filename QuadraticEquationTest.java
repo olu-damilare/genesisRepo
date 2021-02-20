@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import java.util.Scanner;
 public class QuadraticEquationTest{
 	public static void main(String[] args){
@@ -6,15 +5,15 @@ public class QuadraticEquationTest{
 
 		System.out.println("Enter the value for coefficient of x squared:");
 		Scanner input = new Scanner(System.in);
-		int xSquaredCoefficient = input.nextInt();
+		double xSquaredCoefficient = input.nextDouble();
 		question.setCoefficientOfXSquared(xSquaredCoefficient); 
 
 		System.out.println("Enter the value for coefficient of x:");
-		int xCoefficient = input.nextInt();
+		double xCoefficient = input.nextDouble();
 		question.setCoefficientOfX(xCoefficient); 
 
 		System.out.println("Enter the value for coefficient of the constant:");
-		int constant = input.nextInt();
+		double constant = input.nextDouble();
 		question.setConstant(constant); 
 		
 		question.calculateX1();
@@ -24,33 +23,4 @@ public class QuadraticEquationTest{
 
 	}
 
-
-=======
-import java.util.Scanner;
-public class QuadraticEquationTest{
-	public static void main(String[] args){
-		QuadraticEquation question = new QuadraticEquation();
-
-		System.out.println("Enter the value for coefficient of x squared:");
-		Scanner input = new Scanner(System.in);
-		int xSquaredCoefficient = input.nextInt();
-		question.setCoefficientOfXSquared(xSquaredCoefficient); 
-
-		System.out.println("Enter the value for coefficient of x:");
-		int xCoefficient = input.nextInt();
-		question.setCoefficientOfX(xCoefficient); 
-
-		System.out.println("Enter the value for coefficient of the constant:");
-		int constant = input.nextInt();
-		question.setConstant(constant); 
-		
-		question.calculateX1();
-		question.calculateX2();
-		System.out.printf("%s%.2f%n", "x1 = ", question.getX1());
-		System.out.printf("%s%.2f%n", "x2 = ", question.getX2());
-
-	}
-
-
->>>>>>> 8f6eae29619dad069f09852aad400bfce16808ee
 }
