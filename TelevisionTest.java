@@ -3,13 +3,13 @@ public class TelevisionTest{
 	public static void main (String... args){
 
 	Television myTelevision = new Television("LG");
-	myTelevision.setOn(true);
+	myTelevision.setOn(false);
 	
 	System.out.println(myTelevision.isOn());
 	System.out.println("The volume is " + myTelevision.getVolume());
 	System.out.println("This television is an " + myTelevision.getName() + " product.");
 
-	myTelevision.setVolume(1);
+	myTelevision.setVolume(5);
 	myTelevision.decreaseVolume();
 	System.out.println("The volume is " + myTelevision.getVolume());
 	myTelevision.decreaseVolume();
