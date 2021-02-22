@@ -16,10 +16,10 @@ public class QuadraticEquationTest{
 		double constant = input.nextDouble();
 		question.setConstant(constant); 
 		
-		question.calculateX1();
-		question.calculateX2();
-		System.out.printf("%s%.2f%n", "x1 = ", question.getX1());
-		System.out.printf("%s%.2f%n", "x2 = ", question.getX2());
+		question.calculateRoot1();
+		question.calculateRoot2();
+		System.out.printf("%s%.2f%n", "x1 = ", question.getRoot1());
+		System.out.printf("%s%.2f%n", "x2 = ", question.getRoot2());
 
 	}
 

@@ -3,6 +3,8 @@ public class Television {
 	private String name;
 	private int volume;
 	private int channel;
+	private int volumeBeforeMute;
+	private boolean mute;
 
 	public Television(String name){
 		this.name = name;
@@ -10,8 +12,13 @@ public class Television {
 
 	public void increaseVolume(){
 		if(isOn == true){
+			if (mute == true){
+				muteVolume();
+				volume = volumeBeforeMute;
+				volume++;
+			}
 			if (volume  >= 0 && volume < 100){
-				volume += 1;
+				volume++;
 			}
 			else
 				System.out.println("The volume cannot increase beyond 100");
@@ -22,6 +29,11 @@ public class Television {
 
 	public void decreaseVolume(){
 		if(isOn == true){
+			if (mute == true){
+				muteVolume();
+				volume = volumeBeforeMute;
+				volume--;
+			}
 			if (volume <= 100 && volume >= 1){	
 				volume -= 1;
 			}
@@ -46,6 +58,9 @@ public class Television {
 	public int getVolume(){
 		return volume;
 	}
+	public boolean isMute(){
+		return mute;
+	}
 	
 	public boolean isOn(){
 		return isOn;
@@ -62,6 +77,17 @@ public class Television {
 	
 	public String getName(){
 		return name;
+	}
+	public void muteVolume(){
+		if(isOn == true && volume != 0){
+			volumeBeforeMute = volume;
+			volume = 0;
+			mute = true;
+		}
+		else if (isOn == true && volume == 0){
+			volume = volumeBeforeMute;
+			mute = false;
+		}
 	}
 	public void setChannel(int newChannel){
 		if(isOn == true){

@@ -2,8 +2,8 @@ public class QuadraticEquation{
 	private double coefficientOfXSquared;
 	private double coefficientOfX;
 	private double constant;
-	private double x1;
-	private double x2;
+	private double root1;
+	private double root2;
 
 	public void setCoefficientOfXSquared(double number){
 		coefficientOfXSquared = number;
@@ -23,19 +23,19 @@ public class QuadraticEquation{
 	public double getConstant(){
 		return constant;
 	}
-	public void calculateX1(){
+	public void calculateRoot1(){
 		double squareRootValue = Math.sqrt((coefficientOfX * coefficientOfX) - (4 * coefficientOfXSquared * constant));
-		x1 =(-coefficientOfX + squareRootValue) / (2 * coefficientOfXSquared);
+		root1 =(-coefficientOfX + squareRootValue) / (2 * coefficientOfXSquared);
 	}
-	public double getX1(){
-		return x1;
+	public double getRoot1(){
+		return root1;
 	}
-	public void calculateX2(){
+	public void calculateRoot2(){
 		double squareRootValue = Math.sqrt((coefficientOfX * coefficientOfX) - (4 * coefficientOfXSquared * constant));
-		x2 =(-coefficientOfX - squareRootValue) / (2 * coefficientOfXSquared);
+		root2 =(-coefficientOfX - squareRootValue) / (2 * coefficientOfXSquared);
 	}
-	public double getX2(){
-		return x2;
+	public double getRoot2(){
+		return root2;
 	}
 	
 

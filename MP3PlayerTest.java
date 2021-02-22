@@ -46,9 +46,9 @@ public class MP3PlayerTest{
 	
 	myMusicPlayer.muteTrack();
 	System.out.println("volume is " + myMusicPlayer.getVolume());
-	myMusicPlayer.increaseVolume();
-	myMusicPlayer.increaseVolume();
-	myMusicPlayer.increaseVolume();
+	myMusicPlayer.decreaseVolume();
+	myMusicPlayer.decreaseVolume();
+	myMusicPlayer.decreaseVolume();
 	//myMusicPlayer.muteTrack();
 	System.out.println("volume is " + myMusicPlayer.getVolume());
 	

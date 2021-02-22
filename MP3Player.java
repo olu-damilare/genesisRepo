@@ -5,6 +5,7 @@ public class MP3Player{
 	private boolean playTrack;
 	private boolean pauseTrack;
 	private int volumeBeforeMute;
+	private boolean mute;
 
 	public MP3Player(int currentTrack, int volume){
 		this.currentTrack = currentTrack;
@@ -13,7 +14,13 @@ public class MP3Player{
 
 	public void increaseVolume(){
 		if(isOn == true){
-			if (volume  >= 0 && volume < 50){
+			if (mute == true){
+				muteTrack();
+				volume = volumeBeforeMute;
+				volume++;
+			}
+
+			if (volume >= 0 && volume < 50){
 				volume += 1;
 			}
 			else
@@ -25,6 +32,11 @@ public class MP3Player{
 
 	public void decreaseVolume(){
 		if(isOn == true){
+			if (mute == true){
+				muteTrack();
+				volume = volumeBeforeMute;
+				volume--;
+			}
 			if (volume <= 50 && volume >= 1){	
 				volume -= 1;
 			}
@@ -38,13 +50,18 @@ public class MP3Player{
 	public int getVolume(){
 		return volume;
 	}
+	public boolean isMute(){
+		return mute;
+	}
 	public void muteTrack(){
 		if(isOn == true && volume != 0){
 			volumeBeforeMute = volume;
 			volume = 0;
+			mute = true;
 		}
 		else if (isOn == true && volume == 0){
 			volume = volumeBeforeMute;
+			mute = false;
 		}
 	}
 	

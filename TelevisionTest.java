@@ -3,7 +3,7 @@ public class TelevisionTest{
 	public static void main (String... args){
 
 	Television myTelevision = new Television("LG");
-	myTelevision.setOn(false);
+	myTelevision.setOn(true);
 	
 	System.out.println(myTelevision.isOn());
 	System.out.println("The volume is " + myTelevision.getVolume());
@@ -17,7 +17,9 @@ public class TelevisionTest{
 
 	myTelevision.setVolume(96);
 	System.out.println("The volume is " + myTelevision.getVolume());
-	
+	myTelevision.muteVolume();
+	System.out.println("The volume is " + myTelevision.getVolume());
+	myTelevision.muteVolume();
 	myTelevision.increaseVolume();
 	myTelevision.increaseVolume();
 	myTelevision.increaseVolume();
