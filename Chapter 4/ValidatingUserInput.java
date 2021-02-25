@@ -11,8 +11,6 @@ public class ValidatingUserInput {
         int failures = 0;
         int studentCounter = 1;
 
-
-
         while(studentCounter <= 10) {
             System.out.println("Enter result (1 = pass, 2 = fail): ");
             result = input.nextInt();

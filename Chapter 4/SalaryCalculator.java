@@ -1,6 +1,6 @@
 package chapterFour;
 import java.util.Scanner;
-public class salaryCalculator {
+public class SalaryCalculator {
     public static void main(String[] args) {
         int employeeNumber = 1;
         double grossPay = 0.00;
